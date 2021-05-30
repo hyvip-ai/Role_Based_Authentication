@@ -1,0 +1,25 @@
+<div class="container">
+    <table class="table table-hover" *ngIf='feeddata' style="text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Type</th>
+            <th scope="col">Price</th>
+            <th scope="col">Shop Name</th>
+            <th scope="col">Place Order</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let item of feeddata.items;index as i'>
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.storename}}</td>
+            <td><button class="btn btn-outline-warning" (click)='placeorder(item._id)'>Place Order</button></td>
+          </tr>
+    
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <form class="form-floating" [formGroup]='itemform'>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" formControlName='name' placeholder="Name">
+            <label for="floatingInput">Name</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" formControlName='price' class="form-control"  placeholder="Name">
+            <label for="floatingPassword">Price</label>
+          </div>
+          <select formControlName='type' class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="electronics">electronics</option>
+            <option value="study">study</option>
+            <option value="garments">garments</option>
+          </select>
+          <button class="btn btn-outline-primary" (click)='submitvalue()'>Submit</button>
+    </form>
+</div>

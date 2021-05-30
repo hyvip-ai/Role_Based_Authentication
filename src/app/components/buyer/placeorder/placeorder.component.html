@@ -1,0 +1,26 @@
+<div class="container" *ngIf='itemdata'>
+    <h2>Product Name</h2>
+<p>{{itemdata.item.name}}</p>
+
+<h2>Product Type</h2>
+<p>{{itemdata.item.type}}</p>
+
+
+<form>
+    <label for="product">Product Quantity</label>
+<input type="number" name="number" [(ngModel)]='quantity'  (input)='priceincearese()' min="1" id="product">
+</form>
+
+<h2>Product price</h2>
+<p>{{price}}</p>
+<button (click)='order()'>Place Order</button>
+</div>
+
+<div *ngIf= 'placedorder'>
+    <h3>Your Order Is in pending status check "myorders" section to check if it is confirmed or not</h3>
+</div>
+
+
+
+
+

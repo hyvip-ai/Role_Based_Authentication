@@ -1,0 +1,35 @@
+<div class="container" style="text-align: center;">
+
+        
+    <ul *ngIf='newseller' class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+         New Seller Joined
+          <span class="badge bg-primary rounded-pill">{{newseller}}</span>
+        </li>
+    
+      </ul>
+    <table *ngIf='mydata' class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Name</th>
+            <th scope="col">Emai</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Get Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let item of mydata.messege ;index as i'>
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phno}}</td>
+            <td><button class="btn btn-outline-success" >More Info</button></td>
+          </tr>
+       
+        
+        </tbody>
+      </table>
+        <!-- <button class="btn btn-danger" (click) = 'back()' [disabled] = 'page==1'>Back</button>
+      <button class="btn btn-primary" (click)='chngpage()' [disabled] = 'page==3'>go to next page</button> -->
+</div>

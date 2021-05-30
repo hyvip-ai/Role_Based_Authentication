@@ -1,0 +1,40 @@
+<div class="container">
+    <form class="form-floating" [formGroup] = 'shopform'>
+      <fieldset>Add New Shop</fieldset>
+        <div class="form-floating">
+            <input formControlName = 'name' type="text" class="form-control" id="floatingInput" placeholder="Name Of The Shop">
+            <label for="floatingInput">Shop Name</label>
+          </div>
+          <div class="form-floating">
+            <input formControlName = 'address' type="text" class="form-control" id="floatingaddress" placeholder="Address Of The Shop">
+            <label for="floatingPassword">Shop Address</label>
+          </div>
+
+          <button class="btn btn-primary" [disabled] = '!shopform.valid' (click)='create()'>Create Shop</button>
+    </form>
+
+
+    <table class="table" *ngIf = 'myshops' style="text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Owner</th>
+            <th scope="col">ShopName</th>
+            <th scope="col">Add Items</th>
+            <th scope="col">Details</th>
+            <th scope='col'>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let item of myshops.mystores;index as i'>
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.createdby}}</td>
+            <td>{{item.name}}</td>
+            <td><button class="btn btn-outline-info" (click)='additems(item._id)'>Add Items</button></td>
+            <td><button class="btn btn-outline-success" (click)='gotodetail(item._id)'>Details</button></td>
+            <td><button class = 'btn btn-outline-danger' (click)='delete(item._id)'>Delete</button></td>
+          </tr>
+   
+        </tbody>
+      </table>
+</div>

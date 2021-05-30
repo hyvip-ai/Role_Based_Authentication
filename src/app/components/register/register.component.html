@@ -1,0 +1,28 @@
+<div class="container">
+    <form class="form-floating"[formGroup]='registerform'>
+        <div class="form-floating">
+            <input formControlName='name' type="text" class="form-control" id="floatingName" placeholder="name">
+            <label for="floatingName">Name</label>
+          </div>
+        <div class="form-floating">
+            <input type="email" formControlName='email' class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" formControlName='password' class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" formControlName='phno' class="form-control" id="floatingphno" placeholder="Ph No.">
+            <label for="floatingphno">Ph No.</label>
+          </div>
+          <select class="form-select" formControlName='Role' aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="buyer">Buyer</option>
+            <option value="seller">Seller</option>
+
+          </select>
+          <button class="btn btn-info" (click)='register()' [disabled] = '!registerform.valid'>Submit</button>
+    </form>
+  <div>Have an account goto <a routerLink = '/Login'>Login Page</a></div>  
+</div>

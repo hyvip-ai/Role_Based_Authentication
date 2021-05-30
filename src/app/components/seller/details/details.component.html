@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table table-hover" *ngIf = 'mylist'>
+        <thead>
+          <tr>
+            <th scope="col">Number</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Type</th>
+            <th scope="col">Price</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Shop Name</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let item of mylist.items;index as i'>
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.owner}}</td>
+            <td>{{item.storename}}</td>
+            <td><button class="btn btn-outline-danger" (click)="deleteitem(item._id)">Delete</button></td>
+          </tr>
+
+        </tbody>
+      </table>
+</div>
